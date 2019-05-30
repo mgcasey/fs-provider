@@ -1,4 +1,4 @@
-export class rentals{
+export class Rentals{
     public location: string;
     public rentReview: string;
     public price: number;
@@ -6,6 +6,8 @@ export class rentals{
     public picture: string;
     public avail: boolean;
     public address: string;
+    public id: number;
+    public rating: number;
 
 
     constructor(){
@@ -16,5 +18,6 @@ export class rentals{
         this.picture = "";
         this.avail;
         this.address = "";
+        this.id = 0;
     }
 }

@@ -12,30 +12,30 @@
 <ion-content>
       <ion-grid>
           <ion-row>
-            <ion-col *ngFor="let rental of rentalList">
+            <ion-col *ngIf="currentProperty">
               <ion-card (click) = "navToEdit()">
                 <ion-card-header>
                   <ion-card-subtitle>Click to edit</ion-card-subtitle>
-                <ion-card-title>{{rental.location}}</ion-card-title>
+                <ion-card-title>{{currentProperty.location}}</ion-card-title>
               </ion-card-header>
             
                 <ion-card-content>
-                  {{rental.rentReview}}
-                  <img  class = "displayed"  src={{rental.picture}}>
+                  {{currentProperty.rentReview}}
+                  <img  class = "displayed"  src={{currentProperty.picture}}>
 
                   <div ion-padding> 
                     <ion-item ion-padding>Rental Details</ion-item>
                   </div>
                   <ion-list ion-padding>
                     <ion-item>
-                      <ion-note class>Accomodation: {{rental.accomodation}}</ion-note>
+                      <ion-note class>Accomodation: {{currentProperty.accomodation}}</ion-note>
                     </ion-item>
                     <ion-item>
-                      <ion-note>Price: ${{rental.price}}/night</ion-note>
+                      <ion-note>Price: ${{currentProperty.price}}/night</ion-note>
                     </ion-item>
                     <ion-item>
-                        <ion-note *ngIf="rental.avail">Available!</ion-note>
-                        <ion-note *ngIf="!rental.avail">Not Available, check back next time!</ion-note>
+                        <ion-note *ngIf="currentProperty.avail">Available!</ion-note>
+                        <ion-note *ngIf="!currentProperty.avail">Not Available, check back next time!</ion-note>
                     </ion-item>
                   </ion-list>
                 </ion-card-content>

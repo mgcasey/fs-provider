@@ -3,6 +3,10 @@
     <ion-title>
       Manage Existing Rentals
     </ion-title>
+    <ion-buttons slot="end">
+      <ion-title>Logout</ion-title>
+      <ion-button defaultHref="login"></ion-button>
+    </ion-buttons>
   </ion-toolbar>
 </ion-header>
 
@@ -21,7 +25,7 @@
       <ion-grid>
           <ion-row>
             <ion-col *ngFor="let rental of rentalList">
-              <ion-card (click)="navToDetails()">
+              <ion-card (click)="navToProperty(rental)">
                 <ion-card-header>
                   <ion-card-subtitle>Manage Your Rentals</ion-card-subtitle>
                 <ion-card-title>{{rental.location}}</ion-card-title>
