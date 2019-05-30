@@ -1,0 +1,31 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Login</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-grid>
+    <ion-row justify-content-center>
+      <ion-col align-self-center size-md="6" size-lg="5" size-xs="12">
+        <div text-center>
+          <h3>Welcome Home!</h3>
+        </div>
+        <div padding>
+            <ion-item>
+              <ion-input type="text" placeholder="Username"></ion-input>
+            </ion-item>
+            <ion-item>
+              <ion-input type="text" placeholder="Password"></ion-input>
+            </ion-item>
+            <ion-item>
+                <ion-label id = "forgot" color = "primary"><a href = ''>Forgot your password? Sorry.</a></ion-label>
+            </ion-item>
+        </div>
+      </ion-col>
+
+    </ion-row>
+    
+  </ion-grid>
+  <ion-button size="large" (click)="navToExplore()">Come Home</ion-button>
+</ion-content>
