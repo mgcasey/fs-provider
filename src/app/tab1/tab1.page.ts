@@ -26,8 +26,9 @@ export class Tab1Page {
 
 
 
-  navToDetails(){
-    this.navCtrl.navigateForward('rentaldetails');
+
+  navToLogin(){
+    this.navCtrl.navigateForward('login');
   }
 
   navToProperty(property: Rentals){
