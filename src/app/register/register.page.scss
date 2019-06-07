@@ -1,0 +1,39 @@
+ion-button {
+    position: absolute;
+    margin-right: 33%;
+    margin-left: 33%;
+    width:34%;
+}
+
+#forgot {
+    font-size: 10px;
+    text-align: center;
+}
+
+
+
+
+// ion-content {
+//     --ion-background-color: #e09523 !important;
+//     background: linear-gradient(rgba(255, 0, 255, 0.5), rgba(255, 255, 255, 0.5)), url(https://thesandyfeet.com/wp-content/uploads/2015/11/SanFrancisco-39-2-1000x667.jpg);
+//     background-size: contain;
+//     background-repeat: no-repeat;
+//     background-position: center bottom;
+//     height: 50vh;
+// }
+
+
+// .page-background-image {
+//     background: linear-gradient(rgba(255, 0, 255, 0.5), rgba(255, 255, 255, 0.5)), url(https://thesandyfeet.com/wp-content/uploads/2015/11/SanFrancisco-39-2-1000x667.jpg);
+//     background-size: contain;
+//     background-repeat: no-repeat;
+//     background-position: center bottom;
+//     height: 50vh;
+//   }
+
+  :host {
+    ion-content {
+      --background: url('https://thesandyfeet.com/wp-content/uploads/2015/11/SanFrancisco-39-2-1000x667.jpg') no-repeat center center / cover;
+
+    }
+  }

@@ -1,0 +1,53 @@
+<ion-header>
+    <ion-toolbar>
+      <ion-title color = "warning">Register</ion-title>
+      <ion-buttons slot="start">
+        <ion-back-button defaultHref=""></ion-back-button>
+      </ion-buttons>
+    </ion-toolbar>
+  </ion-header>
+  
+  <ion-content>
+    <ion-grid>
+      <ion-row justify-content-center>
+        <ion-col align-self-center size-md="6" size-lg="5" size-xs="12">
+          <div text-center>
+            <h3>Let's get registered.</h3>
+          </div>
+          <div padding>
+              <ion-item>
+                  <ion-label position="stacked">Full Name</ion-label>
+                  <ion-input color = "primary" type="text" placeholder="Full Name" [(ngModel)] ="provider.name"></ion-input>
+              </ion-item>
+              <!-- <ion-item>
+                  <ion-label position="stacked">Last Name</ion-label>
+                  <ion-input color = "primary" type="text" placeholder="Last Name"></ion-input>
+              </ion-item> -->
+              <ion-item>
+                  <ion-label position="stacked">Email</ion-label>
+                  <ion-input color = "primary" type="text" placeholder="Email" [(ngModel)] ="provider.email"></ion-input>
+              </ion-item>
+              <!-- <ion-item>
+                  <ion-label position="stacked">Phone Number</ion-label>
+                  <ion-input color = "primary" type="text" placeholder="Phone Number"></ion-input>
+              </ion-item> -->
+              <!-- <ion-item>
+                <ion-label position="stacked">Username</ion-label>
+                <ion-input color = "primary" type="text" placeholder="Username"></ion-input>
+              </ion-item> -->
+              <ion-item>
+                <ion-label position="stacked">Password</ion-label>
+                <ion-input type = "password" color = "primary"  placeholder="Password" [(ngModel)] ="provider.password"></ion-input>
+              </ion-item>
+              <!-- <ion-item>
+                  <ion-label position="stacked">Confirm Password</ion-label>
+                  <ion-input color = "primary" type="text" placeholder="Password"></ion-input>
+                </ion-item> -->
+          </div>
+        </ion-col>
+  
+      </ion-row>
+    </ion-grid>
+    <ion-button color = "warning" size="large" (click)="submit()">Welcome Home</ion-button>
+  </ion-content>
+  
