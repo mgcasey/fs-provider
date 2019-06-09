@@ -19,19 +19,20 @@
         <div padding>
             <ion-item>
                 <ion-label color = "primary" position = "stacked">Name</ion-label>
-                <ion-input type="text" placeholder="Name"></ion-input>
+                <ion-input type="text" placeholder="Name" [(ngModel)] ="rental.name"></ion-input>
             </ion-item>
             <ion-item>
               <ion-label color = "primary" position = "stacked">Location</ion-label>
-              <ion-input type="text" placeholder="Location"></ion-input>
+              <ion-input type="text" placeholder="Location" [(ngModel)] ="rental.location"></ion-input>
             </ion-item>
             <!-- <ion-item>
               <ion-label position = "stacked">Location</ion-label>
               <ion-input type="text" placeholder="Address"></ion-input>
             </ion-item> -->
+            <!-- need to figure out why price automatically goes to 0 -->
             <ion-item>
               <ion-label color = "primary" position = "stacked">Price</ion-label>
-              <ion-input type="text" placeholder="Price"></ion-input>
+              <ion-input type="text" [(ngModel)] = "rental.price" placeholder="Price" ></ion-input>
             </ion-item>
             <!-- <ion-item>
               <ion-label position = "stacked">Review</ion-label>
@@ -39,7 +40,7 @@
             </ion-item> -->
             <ion-item>
               <ion-label color = "primary" position = "stacked">Picture Link</ion-label>
-              <ion-input type="text" placeholder="Picture Link"></ion-input>
+              <ion-input type="text" placeholder="Picture Link" [(ngModel)] ="rental.picture"></ion-input>
             </ion-item>
             
         </div>
@@ -48,5 +49,5 @@
     </ion-row>
     
   </ion-grid>
-  <ion-button size="large">Create Home</ion-button>
+  <ion-button size="large" (click) = "submit()">Create Home</ion-button>
 </ion-content>

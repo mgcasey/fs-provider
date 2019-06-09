@@ -28,14 +28,15 @@
             </div>
             <ion-list ion-padding>
               <ion-item>
-                <ion-note class>Accomodation:<ion-input placeholder = "{{rental.accomodation}}"></ion-input></ion-note>
+                <ion-note class>Accomodation:<ion-input placeholder = "{{rental.name}}"></ion-input></ion-note>
               </ion-item>
               <ion-item>
                 <ion-note>Price: <ion-input placeholder = "{{rental.price}}"></ion-input></ion-note>
               </ion-item>
               <ion-item>
-                  <ion-note *ngIf="rental.avail">Available!</ion-note>
-                  <ion-note *ngIf="!rental.avail">Not Available, check back next time!</ion-note>
+                  <ion-note>Available!</ion-note>
+                  <!-- <ion-note *ngIf="rental.avail">Available!</ion-note>
+                  <ion-note *ngIf="!rental.avail">Not Available, check back next time!</ion-note> -->
               </ion-item>
             </ion-list>
           </ion-card-content>

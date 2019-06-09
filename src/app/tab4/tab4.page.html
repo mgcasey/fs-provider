@@ -1,0 +1,55 @@
+<ion-header>
+    <ion-toolbar>
+      <ion-buttons slot="start">
+          <ion-back-button defaultHref="tabs"></ion-back-button>
+      </ion-buttons>
+      <ion-title >Profile</ion-title>
+    </ion-toolbar>
+  </ion-header>
+<ion-content>
+   
+    <ion-avatar>
+        <img src="https://scontent.fopo2-1.fna.fbcdn.net/v/t1.0-1/p320x320/53817047_587622905069951_2038057819852242944_n.jpg?_nc_cat=109&_nc_ht=scontent.fopo2-1.fna&oh=d2b5c73a38f7016ea7826695c2787907&oe=5D563CFA">
+    </ion-avatar>
+    <h1 id = "name" >Hi, I'm {{provider.name}}</h1>
+    <div ion-padding>
+        <ion-item ion-padding>About</ion-item>
+    </div>
+    <ion-list ion-padding lines ="none">
+      <ion-item>
+          <ion-note class ='firstList'>Lives in San Francisco</ion-note>
+      </ion-item>
+      <ion-item>
+            <ion-note class ='firstList'>Studies at WashU</ion-note>
+      </ion-item>
+      <ion-item>
+            <ion-note class ='firstList'>5-Star Rated Renter</ion-note>
+      </ion-item>
+    </ion-list>
+    <ion-list>
+      <ion-item>
+          <ion-label>Contact Me</ion-label>
+      </ion-item>
+      <ion-chip id = "email" color="warning" >
+          <ion-label (click)="presentAlertEmail()">Email</ion-label>
+          <ion-icon name="mail"></ion-icon>
+      </ion-chip>
+      <ion-chip id ="phone" color="warning">
+          <ion-label (click)="presentAlertPhone()">Phone</ion-label>
+          <ion-icon name="call"></ion-icon>
+      </ion-chip>
+      <ion-item>
+          <ion-label>2 Reviews</ion-label>
+      </ion-item>
+    </ion-list>
+    <ion-list class = "reviews">
+            <ion-item>
+                <ion-label stacked>Review 1</ion-label>
+                <ion-label class = "comment">The house was great!</ion-label>
+            </ion-item> 
+            <ion-item>
+                    <ion-label stacked>Review 2</ion-label>
+                    <ion-label class ="comment">I loved it!</ion-label>
+                </ion-item> 
+      </ion-list>
+</ion-content>

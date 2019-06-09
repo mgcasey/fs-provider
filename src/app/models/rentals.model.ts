@@ -1,23 +1,25 @@
 export class Rentals{
     public location: string;
-    public rentReview: string;
+    //public rentReview: string;
     public price: number;
-    public accomodation: string;
+    public name: string;
     public picture: string;
-    public avail: boolean;
-    public address: string;
+    //public avail: boolean;
+    //public address: string;
     public id: number;
-    public rating: number;
+    public providerId: number;
+    //public rating: number;
 
 
     constructor(){
         this.location = "";
-        this.rentReview = "";
+        //this.rentReview = "";
         this.price;
-        this.accomodation = "";
+        this.name = "";
         this.picture = "";
-        this.avail;
-        this.address = "";
+        //this.avail;
+        //this.address = "";
         this.id = 0;
+        this.providerId = 0;
     }
 }
