@@ -13,7 +13,8 @@
   <ion-grid>
     <ion-row>
       <ion-col *ngFor="let rental of rentalList">
-        <ion-card (click) = "navToEdit()">
+        <!-- (click) = "navToEdit()" -->
+        <ion-card > 
           <ion-card-header>
             <ion-card-subtitle>Click to edit</ion-card-subtitle>
           <ion-card-title><ion-input placeholder = "{{rental.location}}"></ion-input></ion-card-title>

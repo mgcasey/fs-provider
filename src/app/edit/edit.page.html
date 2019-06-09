@@ -1,0 +1,53 @@
+<ion-header>
+    <ion-toolbar>
+      <ion-title>
+        Edit Rentals
+      </ion-title>
+      <ion-item slot = "end" href="">
+          <ion-title >Logout</ion-title>
+      </ion-item>
+      <ion-buttons slot="start">
+          <ion-back-button defaultHref=""></ion-back-button>
+      </ion-buttons>
+    </ion-toolbar>
+  </ion-header>
+  
+  <ion-content>
+    <ion-grid>
+      <ion-row>
+        <ion-col>
+        <!-- <ion-col *ngFor="let rental of rentalList"> -->
+          <!-- (click) = "navToEdit()" -->
+          <ion-card > 
+            <ion-card-header>
+              <ion-card-subtitle>Click to edit</ion-card-subtitle>
+            <ion-card-title><ion-input placeholder = "{{rental.location}}"></ion-input></ion-card-title>
+          </ion-card-header>
+        
+            <ion-card-content>
+              <ion-input placeholder = "{{rental.rentReview}}">Review</ion-input>
+              <img  class = "displayed"  src={{rental.picture}}>
+  
+              <div ion-padding> 
+                <ion-item ion-padding>Rental Details</ion-item>
+              </div>
+              <ion-list ion-padding>
+                <ion-item>
+                  <ion-note class>Accomodation:<ion-input placeholder = "{{rental.name}}"></ion-input></ion-note>
+                </ion-item>
+                <ion-item>
+                  <ion-note>Price: <ion-input placeholder = "{{rental.price}}"></ion-input></ion-note>
+                </ion-item>
+                <ion-item>
+                    <ion-note>Available!</ion-note>
+                    <!-- <ion-note *ngIf="rental.avail">Available!</ion-note>
+                    <ion-note *ngIf="!rental.avail">Not Available, check back next time!</ion-note> -->
+                </ion-item>
+              </ion-list>
+            </ion-card-content>
+          </ion-card>
+        </ion-col>
+      </ion-row>
+  </ion-grid>
+  
+  </ion-content>

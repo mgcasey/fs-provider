@@ -1,14 +1,15 @@
-import { Component } from '@angular/core';
-import { Rentals } from '../models/Rentals.model'
+import { Component, OnInit } from '@angular/core';
+import { Rentals } from '../models/Rentals.model';
 import { NavController, AlertController } from '@ionic/angular';
 import { HttpClient } from '@angular/common/http';
 
 @Component({
-  selector: 'app-tab3',
-  templateUrl: 'tab3.page.html',
-  styleUrls: ['tab3.page.scss']
+  selector: 'app-edit',
+  templateUrl: './edit.page.html',
+  styleUrls: ['./edit.page.scss'],
 })
-export class Tab3Page {
+export class EditPage implements OnInit {
+
 
   public rentalList:  Array<Rentals> = [];
 

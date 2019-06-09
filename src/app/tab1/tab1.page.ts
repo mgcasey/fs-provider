@@ -3,6 +3,7 @@ import { NavigationOptions } from '@ionic/angular/dist/providers/nav-controller'
 import { Rentals } from '../models/Rentals.model';
 import { NavController } from '@ionic/angular';
 import { PropertyService } from '../services/property.service';
+import { HttpClient } from '@angular/common/http';
 
 
 @Component({
@@ -18,14 +19,25 @@ export class Tab1Page {
 
   constructor(
     private navCtrl: NavController,
-    private propertyService: PropertyService ) {
+    private propertyService: PropertyService,
+    private httpClient: HttpClient ) {
 
-    this.propertyService.getAllRentals();
-    this.rentalList = this.propertyService.rentalS;
+    // this.propertyService.getAllRentals();
+    // this.rentalList = this.propertyService.rentalS;
   }
 
 
-
+  ngOnInit(){
+    console.log("Getting properties");
+    this.httpClient.get("http://localhost:3000/properties/getbyproviderid/" + localStorage.getItem("provider_id"))
+      .subscribe(
+        (response: any) => {
+          console.log(response);
+          this.rentalList = response;
+        }
+      );
+    }
+          
 
   navToLogin(){
     this.navCtrl.navigateForward('login');
@@ -41,17 +53,16 @@ export class Tab1Page {
           }
         } );
 }
+  navToEdit(property: Rentals){
+    this.navCtrl
+      .navigateForward('edit', {
+        queryParams: {
+          propertyID: property.id
+        }
+      });
+
+  }
+
+
 }
-
-// navToProperty(property: Rentals){
-    
-
-//   this.navCtrl
-//     .navigateForward('property-details', {
-//       queryParams: {
-//         q: "ionic",
-//         propertyLoc: property.location,
-//         propertyID: property.id
-//       }
-//     } );
 
