@@ -12,7 +12,7 @@ import { HttpClient } from '@angular/common/http';
 export class LoginPage implements OnInit {
 
 
-  public user: any = {
+  public provider: any = {
     email: "",
     password: ""
   };
@@ -32,17 +32,17 @@ export class LoginPage implements OnInit {
 
   submit() {
     console.log("Submitting to the server.");
-    // console.log(this.user);
+    console.log(this.provider);
 
     
 
     this.httpClient
-      .post("http://localhost:3000/users/authentication", this.user) //used to have this.user as second param
+      .post("http://localhost:3000/providers/authentication", this.provider) //used to have this.user as second param
       .subscribe(
         (response: any) => {
-          const userId = response[0].id;
+
           console.log(response);
-          localStorage.setItem("user_id", response[0].id);
+          localStorage.setItem("provider_id", response.id);
           //pass by id / query param and then can get
           // const navOptions: NavigationOptions = {
           //   queryParams: {
@@ -51,11 +51,12 @@ export class LoginPage implements OnInit {
           // };
 
           this.navCtrl.navigateForward('tabs', {queryParams: {
-            user_id: userId
+            provider_id: response.id
           }});
 
         },
         (err) => {
+          console.log(err);
           if(err.error.message) {
           
             this.presentAlert();

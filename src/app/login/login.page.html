@@ -13,10 +13,12 @@
         </div>
         <div padding>
             <ion-item>
-              <ion-input type="text" placeholder="Username"></ion-input>
+              <ion-label color = "primary" position = "stacked">E-mail</ion-label>
+              <ion-input type="text" placeholder="E-mail" [(ngModel)] = "provider.email"></ion-input>
             </ion-item>
             <ion-item>
-              <ion-input type="text" placeholder="Password"></ion-input>
+              <ion-label color = "primary" position = "stacked">Password</ion-label>
+              <ion-input type="password" placeholder="Password" [(ngModel)] = "provider.password"></ion-input>
             </ion-item>
             <ion-item>
                 <ion-label id = "forgot" color = "primary"><a href = 'register'>Not registered? Click here.</a></ion-label>
@@ -27,5 +29,5 @@
     </ion-row>
     
   </ion-grid>
-  <ion-button size="large" (click)="navToExplore()">Come Home</ion-button>
+  <ion-button size="large" (click)="submit()">Come Home</ion-button>
 </ion-content>
