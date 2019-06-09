@@ -1,7 +1,7 @@
 <ion-header>
   <ion-toolbar>
     <ion-title>
-      Edit Rentals
+      Rental Requests
     </ion-title>
     <ion-item slot = "end" href="">
         <ion-title >Logout</ion-title>
@@ -16,20 +16,20 @@
         <!-- (click) = "navToEdit()" -->
         <ion-card > 
           <ion-card-header>
-            <ion-card-subtitle>Click to edit</ion-card-subtitle>
+            <ion-card-subtitle>Manage Requests</ion-card-subtitle>
           <ion-card-title><ion-input placeholder = "{{rental.location}}"></ion-input></ion-card-title>
         </ion-card-header>
       
           <ion-card-content>
-            <ion-input placeholder = "{{rental.rentReview}}">Review</ion-input>
-            <img  class = "displayed"  src={{rental.picture}}>
+            <!-- <ion-input placeholder = "{{rental.rentReview}}">Review</ion-input> -->
+            <!-- <img  class = "displayed"  src={{rental.picture}}> -->
 
             <div ion-padding> 
               <ion-item ion-padding>Rental Details</ion-item>
             </div>
             <ion-list ion-padding>
               <ion-item>
-                <ion-note class>Accomodation:<ion-input placeholder = "{{rental.name}}"></ion-input></ion-note>
+                <ion-note class>Dates: {{booking.dateFrom}}-{{booking.dateTo}} </ion-note>
               </ion-item>
               <ion-item>
                 <ion-note>Price: <ion-input placeholder = "{{rental.price}}"></ion-input></ion-note>

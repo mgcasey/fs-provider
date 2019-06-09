@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { Rentals } from '../models/Rentals.model'
 import { NavController, AlertController } from '@ionic/angular';
 import { HttpClient } from '@angular/common/http';
+import { Booking } from '../models/booking.model';
 
 @Component({
   selector: 'app-tab3',
@@ -10,7 +11,7 @@ import { HttpClient } from '@angular/common/http';
 })
 export class Tab3Page {
 
-  public rentalList:  Array<Rentals> = [];
+  public bookingList:  Array<Booking> = [];
 
   constructor(
     private navCtrl: NavController,
@@ -20,12 +21,12 @@ export class Tab3Page {
   }
 
   ngOnInit(){
-    console.log("Getting properties");
-    this.httpClient.get("http://localhost:3000/properties/getbyproviderid/" + localStorage.getItem("provider_id"))
+    console.log("Getting bookings");
+    this.httpClient.get("http://localhost:3000/bookings/get/" + localStorage.getItem("provider_id"))
       .subscribe(
         (response: any) => {
           console.log(response);
-          this.rentalList = response;
+          this.bookingList = response;
         }
       );
           

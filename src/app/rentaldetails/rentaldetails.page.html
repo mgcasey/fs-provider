@@ -45,6 +45,20 @@
             </ion-col>
           </ion-row>
       </ion-grid>
+      <h2 class ="ion-padding">Notifications</h2>
+      <ion-list>
+        <ion-item *ngFor="let booking of bookingList">
+          <!-- <ion-label *ngIf = "email.hasRead"><ion-text color = "medium" class = "sender">{{email.sender.name}} </ion-text></ion-label> -->
+          <!-- <ion-label *ngIf = "!email.hasRead"><ion-text class = "sender">{{email.sender.name}}</ion-text></ion-label> -->
+          <!-- <ion-text *ngIf = "email.hasRead" color = "medium" class = "content">{{email.message}}</ion-text> -->
+          <!-- <ion-text *ngIf = "!email.hasRead" color = "primary" class = "content">{{email.message}}</ion-text> -->
+          <ion-label><ion-text color = "primary" class = "sender">{{booking.userId}}</ion-text> </ion-label>
+          <ion-text color = "primary" class = "content">Dates: {{booking.dateTo}}-{{booking.dateFrom}}</ion-text> 
+        </ion-item>
+      </ion-list>
+      <div>
+          <h3 class = "ion-padding">That's it!</h3>
+      </div>
 
 </ion-content>
 

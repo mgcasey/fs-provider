@@ -6,6 +6,7 @@ import { Rentals } from '../models/Rentals.model';
 import { NavController } from '@ionic/angular';
 import { PropertyService } from '../services/property.service';
 import { HttpClient } from '@angular/common/http';
+import { Booking } from '../models/booking.model';
 
 @Component({
   selector: 'app-rentaldetails',
@@ -18,6 +19,7 @@ export class RentaldetailsPage implements OnInit {
   public nameOfProperty: string;
   public rental: Rentals = new Rentals();
   public currentProperty: Rentals;
+  public bookingList:  Array<Booking> = [];
 
   constructor(
       private activatedRoute: ActivatedRoute,
@@ -48,10 +50,28 @@ export class RentaldetailsPage implements OnInit {
       // this.currentProperty =
       //   this.propertyService.findRentalByID(this.propertyID);
     };
+    
+    this.httpClient.get("http://localhost:3000/bookings/getreq/" + this.propertyID)
+    .subscribe(
+      (response: any) => {
+        console.log(response);
+        this.bookingList = response;
+      },
+      (err) => {
+        if(err.error.message) {
+          console.log(err);
+        }
+      }
+    );
 
     this.activatedRoute.queryParamMap.subscribe(
       arrow
     );
+
+    console.log("Getting bookings");
+
+    
+          
 
   }
 
