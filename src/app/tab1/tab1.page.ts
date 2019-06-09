@@ -47,8 +47,8 @@ export class Tab1Page {
       this.navCtrl
         .navigateForward('rentaldetails', {
           queryParams: {
-            q: "ionic",
-            propertyLoc: property.location,
+            //q: "ionic",
+            //propertyLoc: property.location,
             propertyID: property.id
           }
         } );
