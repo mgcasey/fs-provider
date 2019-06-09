@@ -49,20 +49,32 @@ export class RentaldetailsPage implements OnInit {
       );
       // this.currentProperty =
       //   this.propertyService.findRentalByID(this.propertyID);
-    };
+      this.httpClient.get("http://localhost:3000/bookings/getreq/" + this.propertyID)
+        .subscribe(
+          (response: any) => {
+            console.log(response);
+            this.bookingList = response;
+          },
+          (err) => {
+            if(err.error.message) {
+              console.log(err);
+            }
+          }
+        );
+      };
     
-    this.httpClient.get("http://localhost:3000/bookings/getreq/" + this.propertyID)
-    .subscribe(
-      (response: any) => {
-        console.log(response);
-        this.bookingList = response;
-      },
-      (err) => {
-        if(err.error.message) {
-          console.log(err);
-        }
-      }
-    );
+    // this.httpClient.get("http://localhost:3000/bookings/getreq/" + this.propertyID)
+    // .subscribe(
+    //   (response: any) => {
+    //     console.log(response);
+    //     this.bookingList = response;
+    //   },
+    //   (err) => {
+    //     if(err.error.message) {
+    //       console.log(err);
+    //     }
+    //   }
+    // );
 
     this.activatedRoute.queryParamMap.subscribe(
       arrow
